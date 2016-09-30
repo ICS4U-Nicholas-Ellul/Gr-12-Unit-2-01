@@ -19,15 +19,21 @@ public class MrCoxallStack {
 		//adds item to top of stack 
 		
 		list.add(item);
-		System.out.println("Added "+item+" to stack.");
+		System.out.println("Added '"+item+"' to stack.");
 	}
 	
 	public String popItem(){
 		//returns top item from stack 
 		
-		String poppedElement = list.get(list.size() - 1);
-		list.remove(list.size() - 1);
-		System.out.println("Removed "+poppedElement+" from the stack.");
+		String poppedElement = "";
+		
+		if(list.size() > 0){
+			poppedElement = list.get(list.size() - 1);
+			list.remove(list.size() - 1);
+			System.out.println("Removed '"+poppedElement+"' from the stack.");
+		}
+
+		System.out.println("The stack is empty");
 		
 		return poppedElement;
 	}
