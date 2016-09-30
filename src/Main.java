@@ -20,7 +20,9 @@ public class Main {
     	
     	
     	MrCoxallStack stackOfStrings = new MrCoxallStack();
-    	stackOfStrings.PushItem(userInput);
+    	stackOfStrings.pushItem(userInput);
+    	System.out.println("Burning...");
+    	String item = stackOfStrings.popItem();
     }
 	
 
