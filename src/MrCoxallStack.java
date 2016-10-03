@@ -6,34 +6,40 @@
  *
  ****************************************************************************/
 import java.util.*;
+import java.lang.*;
+import java.io.IOException;
+import java.util.EmptyStackException;
 
-public class MrCoxallStack {
+public class MrCoxallStack<Item> {
 	//Home made stack 
 	
-	private ArrayList<String> list = new ArrayList<String>();
+	private ArrayList<Item> list = new ArrayList<Item>();
 	
 	public MrCoxallStack(){
 	}
 	
-	public void pushItem(String item){
+	public void pushItem(Item obj){
 		//adds item to top of stack 
-		
-		list.add(item);
-		System.out.println("Added '"+item+"' to stack.");
+		list.add(obj);
+		System.out.println("Added '"+obj+"' to stack.");
 	}
 	
-	public String popItem(){
+	public Item popItem() throws EmptyStackException {
 		//returns top item from stack 
 		
-		String poppedElement = "";
+		Item poppedElement = null;
 		
 		if(list.size() > 0){
 			poppedElement = list.get(list.size() - 1);
 			list.remove(list.size() - 1);
 			System.out.println("Removed '"+poppedElement+"' from the stack.");
 		}
+		else{
+			//throw new StackUnderflowException("Empty Stack");
+			throw new EmptyStackException();
+		}	
 
-		System.out.println("The stack is empty");
+		System.out.println("LOL");
 		
 		return poppedElement;
 	}

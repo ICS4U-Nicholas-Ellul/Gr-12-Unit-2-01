@@ -7,10 +7,11 @@
  ****************************************************************************/
 
 import java.io.IOException;
-import java.util.*;
 
-public class Main {
-	
+import java.util.*;
+import java.lang.*;
+public class Main{
+
 	public static Boolean decisionYes( String userInput, String yes, Boolean trueOrFalse ){
 		//when you ask a question this checks if they said yes.
 		//if they say yes it will return a boolean of your choice.
@@ -53,13 +54,16 @@ public class Main {
     
 	
 		while(done == false){
-			String item = stackOfStrings.popItem();
+		    try {
+				stackOfStrings.popItem();
+			} catch (EmptyStackException e) {
+				// TODO Auto-generated catch block
+				System.err.println("Error. Stack is empty");
+			}
+		    
 			System.out.println("Would you like to remove something else? y/n");
     		userInput = reader.nextLine();
     		done = decisionYes("y",userInput,false);
 		}
-    	
     }
-	
-
 }
