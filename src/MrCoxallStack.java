@@ -13,14 +13,14 @@ import java.util.EmptyStackException;
 public class MrCoxallStack<Item> {
 	//Home made stack 
 	
-	private ArrayList<Item> list = new ArrayList<Item>();
+	private ArrayList<Item> _list = new ArrayList<Item>();
 	
 	public MrCoxallStack(){
 	}
 	
 	public void pushItem(Item obj){
 		//adds item to top of stack 
-		list.add(obj);
+		_list.add(obj);
 		System.out.println("Added '"+obj+"' to stack.");
 	}
 	
@@ -29,10 +29,12 @@ public class MrCoxallStack<Item> {
 		
 		Item poppedElement = null;
 		
-		if(list.size() > 0){
-			poppedElement = list.get(list.size() - 1);
-			list.remove(list.size() - 1);
+		if(_list.size() > 0){
+			
+			poppedElement = _list.get(_list.size() - 1);
+			_list.remove(_list.size() - 1);
 			System.out.println("Removed '"+poppedElement+"' from the stack.");
+		
 		}
 		else{
 			//throw new StackUnderflowException("Empty Stack");

@@ -54,16 +54,19 @@ public class Main{
     
 	
 		while(done == false){
+			
 		    try {
 				stackOfStrings.popItem();
 			} catch (EmptyStackException e) {
 				// TODO Auto-generated catch block
-				System.err.println("Error. Stack is empty");
+				System.err.println("Stack is empty");
 			}
 		    
 			System.out.println("Would you like to remove something else? y/n");
     		userInput = reader.nextLine();
     		done = decisionYes("y",userInput,false);
 		}
+		
+		System.out.println("Done.");
     }
 }
