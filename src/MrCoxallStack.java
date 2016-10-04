@@ -18,8 +18,25 @@ public class MrCoxallStack<Item> {
 	public MrCoxallStack(){
 	}
 	
+	public void clear(){
+		//clears array
+		
+		_list.clear();
+		System.out.println("Cleared.");
+	}
+	
+	public Item peek(){
+		//peeks at top item
+		
+		Item peekedItem = _list.get(_list.size() - 1);
+		
+		return peekedItem;
+				
+	}
+	
 	public void pushItem(Item obj){
 		//adds item to top of stack 
+		
 		_list.add(obj);
 		System.out.println("Added '"+obj+"' to stack.");
 	}
